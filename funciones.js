@@ -22,9 +22,9 @@ function agregarNuevoCompas( donde ) {
 }
 
 function eliminarCompas( donde ) {
-	if ( donde == 'entrada' ) {
+	if ( donde == 'entrada' && n_compas_entrada > 1 ) {
 		$("#entrada .compas").last().remove();
-		if ( n_compas_entrada != 0 ) { n_compas_entrada--; }
+		n_compas_entrada--;
 	} else {
 		$("#resultado").empty();
 	}
