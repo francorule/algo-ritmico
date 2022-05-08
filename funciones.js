@@ -25,7 +25,7 @@ function eliminarCompas( donde ) {
 	if ( donde == 'entrada' && n_compas_entrada > 1 ) {
 		$("#entrada .compas").last().remove();
 		n_compas_entrada--;
-	} else {
+	} else if ( donde == 'resultado') {
 		$("#resultado").empty();
 	}
 }
