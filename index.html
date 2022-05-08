@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+			#contenedor { width: 550px; margin: auto; }
+			h1 { font-family: Arial, Helvetica; }
+			button.si { background-color: green; color: white }
+			div#entrada { display: inline; }
+			div.compas { display: inline; }
+			div.negra { display: inline; }
+			div#agregar_compas { display: inline; margin-left: 20px; }
+			div#agregar_compas button { background-color: orange; color: white; border: 2px solid #555555; }
+			div#eliminar_compas { display: inline; margin-left: 20px; }
+			div#eliminar_compas button { background-color: orange; color: white; border: 2px solid #555555; }
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script src="funciones.js"></script>
+		<script>
+			// CASOS ESPECIALES: canción Forrest Gump
+			
+			$(document).ready(function(){
+			
+				$("body").on("click", "#entrada button", function(){
+					$(this).toggleClass("si");
+				});
+							
+				agregarNuevoCompas('entrada');
+				$("#agregar_compas button").click(function () { agregarNuevoCompas('entrada') });
+				$("#eliminar_compas button").click(function () { eliminarCompas('entrada') });
+				
+				$("#convertir").click(function(){ murguearRitmo(); });
+			});
+		</script>
+	</head>
+	<body>
+		<div id="contenedor">
+			<br /><h1>MURGUEADOR ALGO-RÍTMICO</h1>
+			<div id="entrada">
+			</div>
+			<div id="agregar_compas">
+				<button>+</button>
+			</div>
+			<div id="eliminar_compas">
+				<button>-</button>
+			</div>
+			<br />
+			<br />
+			<br />
+			<br />
+			<button id="convertir">MURGUEAR</button>
+			<br />
+			<br />
+			<div id="resultado">
+			</div>
+		</div>
+	</body>
+</html>
